@@ -1,15 +1,8 @@
-
-* Only apply gravity when player falls down, needs another jump calculation (kurva)
-
-* Skapa animation states, jump start, mid air, jump land
-
 * Jump press hold dictates jump height
-
 Naive solution 1:
 	Determine max time we can hold jump button at a time (like 0.5 sec)
 	Apply a little jump force each time we hold button
 	
-Solution 2
 	
 	
 	
