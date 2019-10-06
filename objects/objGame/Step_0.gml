@@ -1,1 +1,1 @@
-scr_gamepadInput();
+scr_gameInput();

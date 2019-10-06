@@ -1,4 +1,8 @@
 //Check jump animations
 if(sprite_index == jumpStartAnim){
-	sprite_index = sprJumpAir;
+	if(global.isShooting){
+		sprite_index = jumpShooting;
+	}else {
+		sprite_index = jumpAirAnim;
+	}
 }

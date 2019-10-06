@@ -62,21 +62,46 @@ else {
 groundedPrev = grounded;
 grounded = scr_placeMeetingTileMap(x, y + 0.3, "Tiles1");
 
+//Shooting
+if(global.isShooting){
+	if(weaponCoolDownCur < 0){
+		var bullet = instance_create_layer(x + (image_xscale*32) , y -7, "Instances", objBullet);
+		bullet.velX = bulletSpeed* image_xscale;
+		weaponCoolDownCur = weaponCoolDown;
+	}
+}
+weaponCoolDownCur -= 1;
+
+
 //Animations
 if(grounded) {
 	
 	if(velX == 0){
- 		sprite_index = idleAnim;
+		if(global.isShooting){
+			sprite_index = idleShootingAnim;
+		}else {
+			sprite_index = idleAnim;
+		}
+ 		
 		image_speed = 0.5;
 	}
 
 	if(abs(velX) > 0){
-		sprite_index = runningAnim;
+		if(global.isShooting){
+			sprite_index = runningShootingAnim;
+		}else {
+			sprite_index = runningAnim;
+		}
+		
 		image_speed = 1.0;
 	}
 	
 	if(global.crouch && grounded){
-		sprite_index = crouchAnim;	
+		if(global.isShooting){
+			sprite_index = crouchingShootingAnim;
+		}else {
+			sprite_index = crouchAnim;	
+		}
 	}
 	
 	if(global.moveLeft){

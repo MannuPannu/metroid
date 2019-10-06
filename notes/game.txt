@@ -1,8 +1,3 @@
-* Jump press hold dictates jump height
-Naive solution 1:
-	Determine max time we can hold jump button at a time (like 0.5 sec)
-	Apply a little jump force each time we hold button
-	
-	
-	
-	
+* Decide how fast to shoot bullet and wether to have rapid fire or button repeat pressed
+* Fix enemy bullet hit
+* Fix shooting animation length (no prio)
