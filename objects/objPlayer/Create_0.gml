@@ -7,7 +7,7 @@ jumpLandAnim = sprJumpLand;
 crouchAnim = sprCrouch;
 
 //First draft for player controller
-grv = 1.5;
+grv = 1.4;
 
 velX = 0;
 velY = 0;
@@ -26,4 +26,4 @@ playerAccelerationAir = 0.8;
 grounded = false;
 groundedPrev = grounded;
 
-jumpSpeed = 24
+jumpSpeed = 20

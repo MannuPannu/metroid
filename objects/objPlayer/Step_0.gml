@@ -27,11 +27,12 @@ targetY = y + velY;
 
 //Collisions
 //Horizontal collisions
-if(place_meeting(targetX, y, objWall)) {
+//Todo: a better performance wise would be to get the tile and do checks on that
+if(scr_placeMeetingTileMap(targetX, y, "Tiles1")) {
 	
 	mov_step = sign(velX) * 0.1;	
 	
-	while(!place_meeting(x + mov_step, y, objWall)){
+	while(!scr_placeMeetingTileMap(x + mov_step, y, "Tiles1")){
 		x += mov_step;
 	}
 	velX = 0;
@@ -41,10 +42,10 @@ else {
 }
 
 //Vertical collisions
-if(place_meeting(x, targetY, objWall)) {
+if(scr_placeMeetingTileMap(x, targetY, "Tiles1")) {
 	mov_step = sign(velY) * 0.1;	
 	
-	while(!place_meeting(x, y + mov_step, objWall)){
+	while(!scr_placeMeetingTileMap(x, y + mov_step, "Tiles1")){
 		y += mov_step;
 	}
 	
@@ -59,7 +60,7 @@ else {
 }
 
 groundedPrev = grounded;
-grounded = place_meeting(x, y + 0.3, objWall);
+grounded = scr_placeMeetingTileMap(x, y + 0.3, "Tiles1");
 
 //Animations
 if(grounded) {

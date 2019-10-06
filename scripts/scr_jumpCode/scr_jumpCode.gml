@@ -23,8 +23,9 @@ if(velY > 0) {
 	velY += grv * 0.5;	
 }
 
-if(velY < 0 && !global.jumpHeld){
-	velY = max(velY, -jumpSpeed/4);
+if(!grounded && (velY < 0) && !global.jumpHeld){
+    velY *= 0.4;
 }
+
 
 
